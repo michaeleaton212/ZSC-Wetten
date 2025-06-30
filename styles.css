@@ -1,0 +1,205 @@
+/* Grundlayout */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #005BAC 0%, #001f3f 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.content {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Überschrift */
+h1 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.subtext {
+  text-align: center;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+/* Spielkarten im Glassmorphism-Stil */
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.game-card {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+.game-card h2 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+button.tip-button {
+  background-color: #FF0000;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+button.tip-button:hover {
+  background-color: #cc0000;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  margin: 5% auto;
+  padding: 2rem;
+  max-width: 400px;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close-button {
+  color: #ffffff;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #FF0000;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0.2);
+  color: #ffffff;
+}
+
+/* spezieller fix für select dropdown */
+form select {
+  background-color: #005BAC;
+  color: #ffffff;
+}
+
+form select option {
+  background-color: #005BAC;
+  color: #ffffff;
+}
+
+form button {
+  margin-top: 1rem;
+  background-color: #FF0000;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #cc0000;
+}
+
+/* Einsatz-Highlight Box */
+.highlight-box {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid #FF0000;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.highlight-box label {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.twint-hint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+/* Fehlermeldung */
+.error-message {
+  color: #ffcccc;
+  margin-top: 0.5rem;
+}
+
+/* Bestätigung */
+.confirmation {
+  display: none;
+  text-align: center;
+  background-color: rgba(0,0,0,0.7);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+  opacity: 0.6;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZSC Freundestipps</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+  <main class="content">
+    <h1>ZSC Eishockey Tippspiel</h1>
+    <p class="subtext">Nur für den privaten Freundeskreis – kein echtes Geld!</p>
+
+    <div class="games-container">
+      <div class="game-card">
+        <h2>ZSC Lions vs. EV Zug</h2>
+        <button class="tip-button" data-game="ZSC Lions vs. EV Zug">Jetzt tippen</button>
+      </div>
+      <div class="game-card">
+        <h2>ZSC Lions vs. SC Bern</h2>
+        <button class="tip-button" data-game="ZSC Lions vs. SC Bern">Jetzt tippen</button>
+      </div>
+      <div class="game-card">
+        <h2>ZSC Lions vs. HC Davos</h2>
+        <button class="tip-button" data-game="ZSC Lions vs. HC Davos">Jetzt tippen</button>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="tipModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 id="modalGameTitle"></h2>
+        <form id="tipForm">
+          <label for="from_name">Name</label>
+          <input type="text" name="from_name" id="from_name" required />
+
+          <label for="tip">Dein Tipp</label>
+          <select name="tip" id="tip" required>
+            <option value="">Bitte auswählen</option>
+            <option value="Sieg ZSC">Sieg ZSC</option>
+            <option value="Unentschieden">Unentschieden</option>
+            <option value="Niederlage">Niederlage</option>
+          </select>
+
+          <div class="highlight-box">
+            <label for="amount">Einsatzbetrag (mind. 5 CHF)</label>
+            <input type="number" name="amount" id="amount" required min="5" />
+            <small class="twint-hint">Bitte sende den Betrag später per Twint an 079 123 45 67</small>
+          </div>
+
+          <input type="hidden" name="message" id="message" />
+          <input type="hidden" name="from_email" value="noreply@zscwetten.ch" />
+
+          <div id="errorMessage" class="error-message"></div>
+
+          <button type="submit">Tipp absenden</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="confirmationMessage" class="confirmation">
+      Danke, dein Tipp wurde übermittelt. Bitte sende deinen Einsatz per Twint an 079 123 45 67.
+    </div>
+
+    <footer class="footer">
+      <p>© 2025 ZSC Freundestipps – rein privat</p>
+    </footer>
+  </main>
+  <script src="scribt.js"></script>
+</body>
+</html>
